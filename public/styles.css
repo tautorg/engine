@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    font-family: 'Courier New', Courier, monospace;
+    color: #00ff00;
+}
+
+.terminal {
+    width: 80%;
+    max-width: 800px;
+    height: 500px;
+    border: 3px solid #00ff00;
+    border-radius: 10px;
+    background-image: url('/mnt/data/51254936-312c-42a3-a583-2241b6bdb0e5.webp');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 20px #00ff00;
+}
+
+.terminal::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Dark overlay to enhance readability */
+}
+
+.terminal-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.8);
+    border-bottom: 2px solid #00ff00;
+    color: #00ff00;
+    font-weight: bold;
+    z-index: 2;
+    position: relative;
+}
+
+.terminal-window {
+    padding: 20px;
+    height: calc(100% - 40px);
+    overflow-y: auto;
+    z-index: 2;
+    position: relative;
+}
+
+.terminal-content {
+    white-space: pre-wrap;
+    z-index: 2;
+    position: relative;
+}
+
+.terminal-content p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.terminal-content p:last-child {
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { color: #00ff00; }
+    50% { color: transparent; }
+}
+
